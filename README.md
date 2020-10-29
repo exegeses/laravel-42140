@@ -26,3 +26,8 @@
 - [ ] Cygwin https://www.cygwin.com/
 - [ ] Git Bash
 
+2. Composer 
+ Composer es un administrador de dependencias en PHP.  
+ https://getcomposer.org/  
+ https://getcomposer.org/Composer-Setup.exe
+
