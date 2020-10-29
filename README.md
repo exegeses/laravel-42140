@@ -49,4 +49,15 @@
 > Ejemplo para instalar laravel 6x    
 `composer create-project laravel/laravel proyecto "6.*"`
 
+## Iniciando el server
+> Nos tenemos que mover a la carpeta del proyecto    
+> y en la terminal hacer    
+
+`cd proyecto`
+
+
+> EL MARAVILLOSO MUNDO DE ARTISAN    
+> para iniciar al server es el comando    
+
+`php artisan serve `  
 
