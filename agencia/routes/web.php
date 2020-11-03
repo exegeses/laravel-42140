@@ -40,11 +40,4 @@ Route::get('/proceso', function () {
     return view('proceso', [ 'frase' => $frase ]);
 });
 
-Route::get('/proceso', function(){
-    //capturamos datos desde el form
-    $frase = $_GET['frase'];
-    //pasamos los datos a la vista
-    //como array asociativo
-    return view('proceso', ['frase' => $frase ]);
-});
 
