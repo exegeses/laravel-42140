@@ -10,6 +10,7 @@
     </head>
     <body>
         <main class="container">
+
             <h1>Proceso de dato desde un form</h1>
 
             <div class="alert bg-light shadow-sm p-4">
@@ -17,7 +18,10 @@
                 <span class="lead">
                     {{ $frase }}
                 </span>
-
+                <br>
+                <a href="/formulario" class="btn btn-outline-secondary">
+                    volver a formulario
+                </a>
             </div>
 
         </main>

@@ -32,9 +32,9 @@ Route::get('/prueba', function () {
 Route::get('/formulario', function () {
     return view('formulario');
 });
-Route::get('/proceso', function () {
+Route::post('/proceso', function () {
     //capturamos dato desde el form
-    $frase = $_GET['frase'];
+    $frase = $_POST['frase'];
     //pasamos datos a la vista
     // como array asociativo
     return view('proceso', [ 'frase' => $frase ]);
