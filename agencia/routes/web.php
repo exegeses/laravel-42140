@@ -47,3 +47,10 @@ Route::get('/incio2', function(){
 });
 */
 Route::view('/inicio2', 'inicio');
+
+// trayendo datos desde BDD
+Route::get('/regiones', function (){
+    $regiones = \Illuminate\Support\Facades\DB::table('regiones')->get();
+    //pasamos datos a la vista
+    return view('regiones', ['regiones'=>$regiones]);
+});
