@@ -40,4 +40,10 @@ Route::post('/proceso', function () {
     return view('proceso', [ 'frase' => $frase ]);
 });
 
-
+// implementando el motor de plantillas blade
+/*
+Route::get('/incio2', function(){
+    return view('inicio');
+});
+*/
+Route::view('/inicio2', 'inicio');
