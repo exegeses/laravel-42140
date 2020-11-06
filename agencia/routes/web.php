@@ -70,6 +70,7 @@ Route::get('/regiones', function (){
  *  DB::table('nTable')->get();
  *  DB::table('nTable)->select('campo')->get();
  *  DB::table('nTable')->where(condicion)->get();
+ *  DB::table('nTable)->insert( [ ... ] );
  *
  */
 Route::get('/adminRegiones', function () {
