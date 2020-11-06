@@ -6,6 +6,7 @@
 
         <div class="alert bg-light shadow-sm col-8 mx-auto p-4">
             <form action="/agregarRegion" method="post">
+                @csrf
                 <label for="regNombre">Nombre de la región</label>
                 <input type="text"
                        name="regNombre" id="regNombre"
