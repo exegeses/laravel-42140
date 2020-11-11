@@ -175,3 +175,8 @@ Route::get('/adminDestinos', function () {
                         ->get();
     return view('adminDestinos', ['destinos'=>$destinos]);
 });
+
+Route::get('/agregarDestino',function (){
+    $regiones = DB::table('regiones')->get();
+    return view('agregarDestino', ['regiones'=>$regiones]);
+});
