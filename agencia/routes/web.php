@@ -150,5 +150,5 @@ Route::post('/eliminarRegion', function () {
             ->delete();
     return redirect('/adminRegiones')
         ->with('mensaje', 'Region: '.$regNombre.' eliminada correctamente');
-
 });
+
