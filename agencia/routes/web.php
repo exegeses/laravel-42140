@@ -152,3 +152,26 @@ Route::post('/eliminarRegion', function () {
         ->with('mensaje', 'Region: '.$regNombre.' eliminada correctamente');
 });
 
+##################################
+#### CRUD destinos
+Route::get('/adminDestinos', function () {
+    //obtener el listado de destinos
+    /**
+    $destinos = DB::select('SELECT
+                                    destID, destNombre, destPrecio,
+                                    d.regID, r.regNombre
+                                FROM  destinos d, regiones r
+                                WHERE d.regID = r.regID');
+
+    $destinos = DB::select('SELECT
+                                    destID, destNombre, destPrecio,
+                                    d.regID, r.regNombre
+                                FROM  destinos as d
+                                INNER JOIN regiones as r
+                                ON d.regID = r.regID');
+     */
+    $destinos = DB::table('destinos as d')
+                        ->join('regiones as r', 'd.regID','=', 'r.regID')
+                        ->get();
+    return view('adminDestinos', ['destinos'=>$destinos]);
+});
