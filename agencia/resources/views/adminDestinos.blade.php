@@ -16,7 +16,7 @@
             <th>Región</th>
             <th>Precio</th>
             <th colspan="2">
-                <a href="/formAgregarDestino" class="btn btn-dark">
+                <a href="/agregarDestino" class="btn btn-dark">
                     Agregar
                 </a>
             </th>
@@ -30,12 +30,12 @@
                 <td> {{ $destino->regNombre }} </td>
                 <td> ${{ $destino->destPrecio }} </td>
                 <td>
-                    <a href="/formModificarDestino/id" class="btn btn-outline-secondary">
+                    <a href="/modificarDestino/id" class="btn btn-outline-secondary">
                         Modificar
                     </a>
                 </td>
                 <td>
-                    <a href="/formEliminarDestino/id" class="btn btn-outline-secondary">
+                    <a href="/eliminarDestino/id" class="btn btn-outline-secondary">
                         Eliminar
                     </a>
                 </td>
