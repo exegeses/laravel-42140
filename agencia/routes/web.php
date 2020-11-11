@@ -142,3 +142,13 @@ Route::get('/eliminarRegion/{regID}', function ($regID) {
     // que debe tener los datos ya cargados
     return view('eliminarRegion', [ 'region'=>$region ]);
 });
+Route::post('/eliminarRegion', function () {
+    $regNombre = $_POST['regNombre'];
+    $regID = $_POST['regID'];
+    DB::table('regiones')
+            ->where('regID', $regID)
+            ->delete();
+    return redirect('/adminRegiones')
+        ->with('mensaje', 'Region: '.$regNombre.' eliminada correctamente');
+
+});
