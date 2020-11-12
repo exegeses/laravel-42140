@@ -3,10 +3,10 @@
 
         <h1>Alta de un nuevo destino</h1>
 
-        <div class="alert bg-light border shadow-sm rounded p-4">
+        <div class="alert bg-light border-white shadow col-8 mx-auto rounded p-4">
 
-        <form action="" method="">
-
+        <form action="/agregarDestino" method="post">
+            @csrf
             Nombre: <br>
             <input type="text" name="destNombre" class="form-control" required>
             <br>
