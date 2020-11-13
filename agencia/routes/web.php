@@ -222,3 +222,38 @@ Route::get('/modificarDestino/{destID}', function ($destID) {
                     ]
             );
 });
+
+Route::post('/modificarDestino', function () {
+    $destNombre = $_POST['destNombre'];
+    $regID = $_POST['regID'];
+    $destID = $_POST['destID'];
+    $destPrecio = $_POST['destPrecio'];
+    $destAsientos = $_POST['destAsientos'];
+    $destDisponibles = $_POST['destDisponibles'];
+    /**
+    DB::update('UPDATE destinos
+                    SET destNombre = :destNombre,
+                        destPrecio = :destPrecio
+                    WHERE destID = :destID
+               ',
+                [
+                    ':destNombre'=>$destNombre,
+                    ':regID'=>$regID,
+                    ':destPrecio'=>$destPrecio
+                ]
+            );
+    */
+    DB::table('destinos')
+            ->where('destID', $destID)
+            ->update(
+                [
+                    'destNombre'=>$destNombre,
+                    'regID'=>$regID,
+                    'destPrecio'=>$destPrecio,
+                    'destAsientos'=>$destAsientos,
+                    'destDisponibles'=>$destDisponibles,
+                ]
+            );
+    return redirect('/adminDestinos')
+                ->with('mensaje', 'Destino: '.$destNombre.' modificado correctamente');
+});
