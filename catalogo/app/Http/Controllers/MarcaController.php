@@ -16,8 +16,8 @@ class MarcaController extends Controller
     {
         //obtener listado de marcas
         $marcas = Marca::all();
-        dd($marcas);
         //pasar listado a la vista adminMarcas
+        return view('adminMarcas', ['marcas'=>$marcas]);
     }
 
     /**
