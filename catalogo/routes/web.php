@@ -23,3 +23,8 @@ use App\Http\Controllers\MarcaController;
 
 Route::get('/adminMarcas', [ MarcaController::class, 'index' ] );
 
+##########################
+#### CRUD de categorías
+use App\Http\Controllers\CategoriaController;
+
+Route::get('/adminCategorias', [ CategoriaController::class, 'index' ]);
