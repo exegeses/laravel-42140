@@ -20,21 +20,21 @@
                     <th>Presentacion</th>
                     <th>Imagen</th>
                     <th colspan="2">
-                        <a href="/agregarProducto" class="btn btn-dark">
+                        <a href="/agregarProducto" class="btn btn-outline-secondary">
                             Agregar
                         </a>
                     </th>
                 </tr>
             </thead>
             <tbody>
-
+            @foreach( $productos as $producto )
                 <tr>
-                    <td>prod</td>
-                    <td>marca</td>
-                    <td>categoria</td>
-                    <td>precio</td>
-                    <td>present</td>
-                    <td>imagen</td>
+                    <td>{{ $producto->prdNombre }}</td>
+                    <td>{{ $producto->idMarca }}</td>
+                    <td>{{ $producto->idCategoria }}</td>
+                    <td>${{ $producto->prdPrecio }}</td>
+                    <td>{{ $producto->prdPresentacion }}</td>
+                    <td><img src="/productos/{{ $producto->prdImagen }}" class="img-thumbnail"></td>
                     <td>
                         <a href="/modificarProducto" class="btn btn-outline-secondary">
                             Modificar
@@ -46,9 +46,10 @@
                         </a>
                     </td>
                 </tr>
-
+            @endforeach
             </tbody>
         </table>
 
+        {{ $productos->links() }}
 
     @endsection

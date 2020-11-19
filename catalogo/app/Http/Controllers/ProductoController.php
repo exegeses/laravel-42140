@@ -19,7 +19,7 @@ class ProductoController extends Controller
         $productos = Producto::simplePaginate(8);
 
         //retornamos vista pasandole los datos
-        return view('adminProductos',['producto'=>$productos]);
+        return view('adminProductos', ['productos'=>$productos]);
     }
 
     /**
