@@ -30,8 +30,8 @@
             @foreach( $productos as $producto )
                 <tr>
                     <td>{{ $producto->prdNombre }}</td>
-                    <td>{{ $producto->idMarca }}</td>
-                    <td>{{ $producto->idCategoria }}</td>
+                    <td>{{ $producto->relMarca->mkNombre }}</td>
+                    <td>{{ $producto->relCategoria->catNombre }}</td>
                     <td>${{ $producto->prdPrecio }}</td>
                     <td>{{ $producto->prdPresentacion }}</td>
                     <td><img src="/productos/{{ $producto->prdImagen }}" class="img-thumbnail"></td>
