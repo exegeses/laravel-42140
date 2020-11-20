@@ -27,7 +27,7 @@ class MarcaController extends Controller
      */
     public function create()
     {
-        //
+        return view('agregarMarca');
     }
 
     /**
@@ -38,7 +38,21 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //capturamos dato enviado por el form
+        //$mkNombre = $_POST['mkNombre'];
+        $mkNombre = $request->input('mkNombre');
+
+        //validacion
+        $request->validate(
+                        [
+                            'mkNombre'=>'required|min:2|max:50'
+                        ]
+                           );
+
+        //gardar en BDD
+
+        //redirección + mensaje ok
+        return 'pasó validación';
     }
 
     /**
