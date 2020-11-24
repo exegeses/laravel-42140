@@ -46,13 +46,21 @@ class MarcaController extends Controller
         $request->validate(
                         [
                             'mkNombre'=>'required|min:2|max:50'
+                        ],
+                        [
+                            'mkNombre.required'=>'El campo Nombre es obligatorio.',
+                            'mkNombre.min'=>'El campo Nombre debe tener al menos 2 caractéres.',
+                            'mkNombre.max'=>'El campo Nombre debe 50 caractéres como máximo.'
                         ]
                            );
 
         //gardar en BDD
-
+        $Marca = new Marca;
+        $Marca->mkNombre = $mkNombre;
+        $Marca->save();
         //redirección + mensaje ok
-        return 'pasó validación';
+        return redirect('/adminMarcas')
+                        ->with('mensaje', 'La marca: '.$mkNombre.' se agregó correctamente');
     }
 
     /**

@@ -14,14 +14,14 @@
                            class="form-control" id="mkNombre">
                 </div>
                 <button class="btn btn-dark mr-3">Agregar marca</button>
-                <a href="/adminMarcas.php" class="btn btn-outline-secondary">
+                <a href="/adminMarcas" class="btn btn-outline-secondary">
                     Volver a panel
                 </a>
             </form>
         </div>
 
         @if ( $errors->any() )
-            <div class="alert alert-danger">
+            <div class="alert alert-danger col-8 mx-auto">
                 <ul>
                     @foreach ( $errors->all() as $error )
                         <li>{{ $error }}</li>
