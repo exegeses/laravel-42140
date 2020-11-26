@@ -83,12 +83,13 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //validación
-
+        $this->validar($request);
         //subir imagen
 
         //instanciar, asignar y guardar
 
         //return
+        return 'pasço papuuu';
     }
 
     /**

@@ -57,6 +57,24 @@
 
         </div>
 
+        @if ($errors->any())
 
-   @endsection
+            <ul class="list-group col-8 mx-auto">
+                <li class="list-group-item bg-light text-danger">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    Se encontraron errores:
+                </li>
+                @foreach ($errors->all() as $error)
+                    <li class="list-group-item list-group-item-danger">
+                        <i class="fas fa-exclamation-circle mr-2"></i>
+                        {{ $error }}
+                    </li>
+                @endforeach
+            </ul>
+
+        @endif
+
+
+
+@endsection
 
