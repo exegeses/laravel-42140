@@ -31,6 +31,9 @@ class ProductoController extends Controller
     public function create()
     {
         //
+
+        //retornamos vista ?
+        return  view('/agregarProducto');
     }
 
     /**
