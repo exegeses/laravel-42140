@@ -18,7 +18,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">$</div>
                     </div>
-                    <input type="number" name="prdPrecio" class="form-control">
+                    <input type="number" name="prdPrecio" class="form-control" step="0.01">
                 </div>
                 <br>
                 Marca: <br>
