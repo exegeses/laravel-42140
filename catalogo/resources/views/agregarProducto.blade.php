@@ -43,7 +43,7 @@
                 <br>
                 Presentacion: <br>
                 <textarea name="prdPresentacion"
-                          class="form-control">"{{ old('prdPresentacion') }}</textarea>
+                          class="form-control">{{ old('prdPresentacion') }}</textarea>
                 <br>
                 Stock: <br>
                 <input type="number" name="prdStock"
