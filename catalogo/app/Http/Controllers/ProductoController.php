@@ -177,7 +177,7 @@ class ProductoController extends Controller
         $prdImagen = $this->subirImagen($request);
         //obtener datos de producto
         $Producto = Producto::find( $request->idProducto );
-            //asignar atributos
+         //asignar atributos
         $Producto->prdNombre = $request->prdNombre;
         $Producto->idMarca = $request->idMarca;
         $Producto->idCategoria = $request->idCategoria;
@@ -192,14 +192,28 @@ class ProductoController extends Controller
             ->with('mensaje', 'Producto: '.$request->prdNombre.' modificado correctamente.');
     }
 
+    public function confirmar($idProducto)
+    {
+        $Producto = Producto::with('relMarca', 'relCategoria')
+                        ->find($idProducto);
+        return view('eliminarProducto', [ 'producto'=>$Producto ]);
+    }
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy(Request $request)
     {
-        //
+        $prdNombre = $request->prdNombre;
+        $idProducto = $request->idProducto;
+        //borramos
+        Producto::destroy($idProducto);
+        //redirección con mensaje
+        return redirect('/adminProductos')
+            ->with('mensaje', 'Producto: '.$prdNombre.' eliminado correctamente.');
+
     }
 }
