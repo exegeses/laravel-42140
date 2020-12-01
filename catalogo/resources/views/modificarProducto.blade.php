@@ -13,7 +13,7 @@
 
                 Nombre: <br>
                 <input type="text" name="prdNombre"
-                       value="{{ old('prdNombre') }}"
+                       value="{{ old( 'prdNombre', $producto->prdNombre ) }}"
                        class="form-control">
                 <br>
                 Precio: <br>
@@ -22,13 +22,13 @@
                         <div class="input-group-text">$</div>
                     </div>
                     <input type="number" name="prdPrecio"
-                           value="{{ old('prdPrecio') }}"
+                           value="{{ old( 'prdPrecio', $producto->prdPrecio ) }}"
                            class="form-control" step="0.01">
                 </div>
                 <br>
                 Marca: <br>
                 <select name="idMarca" class="form-control" required>
-                    <option value="">Seleccione una marca</option>
+                    <option value="{{ $producto->idMarca }}">{{ $producto->relMarca->mkNombre }}</option>
                 @foreach( $marcas as $marca )
                     <option {{ ( old('idMarca')==$marca->idMarca )?'selected':'' }} value="{{ $marca->idMarca }}">{{ $marca->mkNombre }}</option>
                 @endforeach
@@ -36,7 +36,7 @@
                 <br>
                 Categoría: <br>
                 <select name="idCategoria" class="form-control" required>
-                    <option value="">Seleccione una Categoría</option>
+                    <option value="{{ $producto->idCategoria }}">{{ $producto->relCategoria->catNombre }}</option>
                 @foreach ( $categorias as $categoria )
                     <option {{ ( old('idCategoria')==$categoria->idCategoria )?'selected':'' }} value="{{ $categoria->idCategoria }}">{{ $categoria->catNombre }}</option>
                 @endforeach
@@ -44,20 +44,25 @@
                 <br>
                 Presentacion: <br>
                 <textarea name="prdPresentacion"
-                          class="form-control">{{ old('prdPresentacion') }}</textarea>
+                          class="form-control">{{ old( 'prdPresentacion', $producto->prdPresentacion ) }}</textarea>
                 <br>
                 Stock: <br>
                 <input type="number" name="prdStock"
-                       value="{{ old('prdStock') }}"
+                       value="{{ old( 'prdStock', $producto->prdStock ) }}"
                        class="form-control" min="0">
                 <br>
-                Imagen: <br>
-
+                Imagen actual:
+                    <img src="/productos/{{ $producto->prdImagen }}" class="img-thumbnail">
+                <br>
+                Imagen nueva:
                 <div class="custom-file mt-1 mb-4">
                     <input type="file" name="prdImagen"  class="custom-file-input" id="customFileLang" lang="es">
                     <label class="custom-file-label" for="customFileLang" data-browse="Buscar en disco">Seleccionar Archivo: </label>
                 </div>
-
+                <input type="hidden" name="prdImagenOriginal"
+                       value="{{ $producto->prdImagen }}">
+                <input type="hidden" name="idProducto"
+                       value="{{ $producto->idProducto }}">
                 <br>
                 <button class="btn btn-dark mb-3">Modificar producto</button>
                 <a href="/adminProductos" class="btn btn-outline-secondary mb-3">Volver al panel de Productos</a>
