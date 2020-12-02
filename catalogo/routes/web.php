@@ -45,3 +45,7 @@ Route::get('/modificarProducto/{idProducto}', [ ProductoController::class, 'edit
 Route::put('/modificarProducto', [ ProductoController::class, 'update' ]);
 Route::get('/eliminarProducto/{idProducto}', [ ProductoController::class, 'confirmar' ]);
 Route::delete('/eliminarProducto', [ ProductoController::class, 'destroy' ]);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
