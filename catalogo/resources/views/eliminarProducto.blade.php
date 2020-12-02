@@ -8,7 +8,7 @@
             <div class="col">
                 <img src="/productos/{{$producto->prdImagen}}" class="img-thumbnail">
             </div>
-            <div class="col text-danger item-self-align-center">
+            <div class="col text-danger align-self-center">
                 <h2>{{$producto->prdNombre}}</h2>
                 Categoria: {{ $producto->relCategoria->catNombre }} <br>
                 Marca: {{ $producto->relMarca->mkNombre }} <br>
